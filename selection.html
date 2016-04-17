@@ -56,7 +56,8 @@
                 <label class="checkbox"><input type="checkbox" value="">value creator</label>
                 <label class="checkbox"><input type="checkbox" value="">traveller</label>
                 <label class="checkbox"><input type="checkbox" value="">curious learner</label>
-                <label class="checkbox"><input type="checkbox" value="">advisor</label>
+                <label class="checkbox"><input type="checkbox" value="">happy to help</label>
+                <label class="checkbox"><input type="checkbox" value="">self starter</label>
             </div>
 
         </div>
@@ -105,12 +106,35 @@
 <script src="js/tag-it.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     $(document).ready(function() {
+        var availableSkills = ["c++", "java", "php", "javascript", "ruby", "python", "c", "excel", "powerpoint", "economics", "affiliate-marketing", "economics", "cold-calling", "html", "scala", "mysql", "mongodb", "react", "angularjs", "ios", "css", "scrum", "kanban", "agile", "design", "photoshop", "illustrator", "flux", "backbone", "tdd", "bdd", "mvc", "mvvm", "nodejs", "rails", "jquery", "postresql", "docker", "unix"],
+            languagesList = ["german", "english", "italian", "spanish", "italian", "french"];
+
         $("#expertise-tags").tagit({
-            availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"]
+            availableTags: availableSkills,
+            afterTagAdded: tagHandler(availableSkills)
         });
         $("#language-tags").tagit({
-            availableTags: ["german", "english", "italian", "spanish"]
+            availableTags: languagesList,
+            afterTagAdded: tagHandler(languagesList)
         });
+
+
+        function tagHandler(list) {
+
+            return function (e, added) {
+                var selection =  $(this);
+
+                if (list.indexOf(added.tagLabel.toLowerCase()) === -1) {
+                    selection.tagit('removeTagByLabel', added.tagLabel);
+                    var msg = $('<div class="alert">Tag not in the list</div>');
+                    selection.after(msg);
+                    setTimeout(function () {
+                        msg.remove();
+                    }, 1500);
+                }
+            };
+
+        }
     });
 </script>
 </body>
