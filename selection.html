@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selection</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
+    <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2 class="center-text margin-top-50">Tell us something about you</h2>
+
+    <div class="row margin-top-50">
+
+        <div class="col-sm-6 align-right">
+            <h4>What are your areas of expertise?</h4>
+        </div>
+        <div id="expertise-chooser" class="col-sm-6 align-left">
+
+            <ul id="expertise-tags"></ul>
+        </div>
+    </div>
+
+    <div class="row margin-top-50">
+        <div class="col-sm-6 align-right">
+            <h4>How would you describe yourself?</h4>
+        </div>
+        <div class="col-sm-6 align-left row">
+            <div class="col-sm-4">
+                <label class="checkbox"><input type="checkbox" value="">detail lover</label>
+                <label class="checkbox"><input type="checkbox" value="">team player</label>
+                <label class="checkbox"><input type="checkbox" value="">silent contributor</label>
+                <label class="checkbox"><input type="checkbox" value="">written communicator</label>
+                <label class="checkbox"><input type="checkbox" value="">verbal communicator</label>
+                <label class="checkbox"><input type="checkbox" value="">hands-on</label>
+                <label class="checkbox"><input type="checkbox" value="">problem solver</label>
+            </div>
+            <div class="col-sm-4">
+                <label class="checkbox"><input type="checkbox" value="">natural-born-leader</label>
+                <label class="checkbox"><input type="checkbox" value="">strategic mastermind</label>
+                <label class="checkbox"><input type="checkbox" value="">numbers cruncher</label>
+                <label class="checkbox"><input type="checkbox" value="">analyst</label>
+                <label class="checkbox"><input type="checkbox" value="">creative cookie</label>
+                <label class="checkbox"><input type="checkbox" value="">big picture thinker</label>
+                <label class="checkbox"><input type="checkbox" value="">organizational talent</label>
+            </div>
+            <div class="col-sm-4">
+                <label class="checkbox"><input type="checkbox" value="">socializer</label>
+                <label class="checkbox"><input type="checkbox" value="">visionary</label>
+                <label class="checkbox"><input type="checkbox" value="">value creator</label>
+                <label class="checkbox"><input type="checkbox" value="">traveller</label>
+                <label class="checkbox"><input type="checkbox" value="">curious learner</label>
+                <label class="checkbox"><input type="checkbox" value="">advisor</label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row margin-top-50">
+        <div class="col-sm-6 align-right">
+            <h4>What languages would you like to use in your daily work?</h4>
+        </div>
+
+        <ul id="language-tags"></ul>
+        </div>
+    </div>
+
+    <div class="row margin-top-50">
+        <div class="col-sm-6 align-right">
+            <h4>On which job level would you like to enter our company?</h4>
+        </div>
+        <div class="col-sm-6 align-left">
+            <div class="row">
+                <div class="col-sm-12">
+                    <label class="checkbox"><input type="checkbox" value="">student</label>
+                    <label class="checkbox"><input type="checkbox" value="">intern</label>
+                    <label class="checkbox"><input type="checkbox" value="">entry level</label>
+                    <label class="checkbox"><input type="checkbox" value="">junior level</label>
+                    <label class="checkbox"><input type="checkbox" value="">senior level</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-text">
+        <a class="btn btn-lg btn-primary margin-top-bottom-50" href="overview.html">
+            Submit
+        </a>
+    </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/typeahead.bundle.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tag-it.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#expertise-tags").tagit({
+            availableTags: ["c++", "java", "php", "javascript", "ruby", "python", "c"]
+        });
+        $("#language-tags").tagit({
+            availableTags: ["german", "english", "italian", "spanish"]
+        });
+    });
+</script>
+</body>
+</html>
